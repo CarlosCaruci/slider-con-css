@@ -1,0 +1,90 @@
+* {}
+
+.container {
+    margin: auto;
+    background-color: #fff;
+    width: 800px;
+    padding: 30px;
+}
+
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.slider {
+    position: relative;
+    width: 800px;
+    height: 300px;
+}
+
+ul.slider li {
+    /*LA POSITION ABSOLUTA ES PARA QUE LOS
+    ELEMENTOS SE POCISIONEN UNO ARRIBA DE OTRO*/
+    position: absolute;
+    /*EL OPACITY ES LA TRANSPARENCIA DE LA IMAGEN*/
+    left: 0;
+    top: 0;
+    opacity: 0;
+    /*LA PROPIEDAD INHERIT ES PARA QUE EL ELEMENTO HIJO 
+    HEREDE LAS PROPIEDADES DEL PADRE*/
+    width: inherit;
+    height: inherit;
+    background: #fff;
+    transition: opacity 1.5s;
+}
+
+ul.slider li img {
+    margin: 5px 5px 5px 220px;
+    width: 300px;
+    height: 100%;
+
+    /*EL "OBJET-FIT" CON LA RPOPIEDAD "COVER" HACER QUE 
+    LA IMAGEN NO PIERDA LAS DIMENCIONES QUE TIENE POR DEFECTO*/
+    object-fit: cover;
+
+}
+
+/*LA PROPIEDAD "FIRST-CHILD" SE UTILIZA PARA SELECCIONAR
+EL RPIMER HIJO DEL PADRE, EN ESTE CASO SELECIONAMOS TODOS LOS HIJOS
+DEL "UL SLIDER LI"*/
+ul.slider li:first-child {
+    opacity: 0;
+}
+
+/*LA PROPIEDAD "TARGET" EDITA/MODIFICA EL ELEMENTO 
+SELECCIONADO CON UN "ID", QUE EN ESTE CASP ES UN "LI"*/
+ul.slider li:target {
+    opacity: 1;
+    
+}
+
+
+.menu {
+    text-align: center;
+    margin: 10px;
+    background: none;
+}
+
+.menu li {
+    text-align: center;
+    display: inline-block;
+    background: none;
+}
+
+.menu li a:hover {
+background: #06865e;
+border: 2px solid #333333a1;
+}
+
+.menu li a {
+    text-decoration: none;
+    background: #06c98a;
+    border: 2px solid #333333a1;
+    padding: 2px 7px;
+    border-radius: 50%;
+    color: #fff;
+}
